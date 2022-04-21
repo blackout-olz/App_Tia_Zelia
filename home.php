@@ -69,9 +69,12 @@
 				<div class="mt-5">
 					<div class="d-flex flex-column align-items-center">
 				        <h3>Você irá almoçar hoje?</h3>
-				        <div class="botao-dentro">
-				          <button class="btn btn-padrao text-light btn-lg">Sim</button>
-				        </div>
+				        <form action="confirma_almoco.php" method="post">
+				        	<div class="botao-dentro">
+					          <button class="btn btn-padrao text-light btn-lg">Sim</button>
+					        </div>
+				        </form>
+				        
 				    </div>
 				</div>
 			</div>
@@ -92,13 +95,22 @@
 			    <div class="mt-md-5 pt-md-5">
 			    	<div class="d-flex flex-column align-items-center pt-md-4 mt-5">
 				        <h3>Deixe seu feedback</h3>
-				        <div>
-				        	<i 
-				        	class="fa-regular fa-face-frown feedback-icon" id="f1"></i>
-				        	<i class="fa-regular fa-face-frown-open feedback-icon" id="f2"></i>
-				          	<i class="fa-regular fa-face-meh feedback-icon" id="f3"></i>
-				          	<i class="fa-regular fa-face-smile feedback-icon" id="f4"></i>
-				          	<i class="fa-regular fa-face-grin-stars feedback-icon" id="f5"></i>
+				        <div class="d-flex">
+				        	<div id="f1" class="px-1">
+				        	<i class="fa-regular fa-face-frown feedback-icon"></i>
+				        	</div>
+				        	<div id="f2" class="px-1">
+					        	<i class="fa-regular fa-face-frown-open feedback-icon"></i>
+					        </div>
+					        <div id="f3" class="px-1">
+					          	<i class="fa-regular fa-face-meh feedback-icon"></i>
+					        </div>
+					        <div id="f4" class="px-1">
+					          	<i class="fa-regular fa-face-smile feedback-icon"></i>
+					        </div>
+					        <div id="f5" class="px-1">
+					          	<i class="fa-regular fa-face-grin-stars feedback-icon"></i>
+					        </div>
 				        </div>
 				    </div>
 			    </div>
