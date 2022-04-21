@@ -1,3 +1,6 @@
+//parametros na url
+let params = window.location.search
+
 //transforma objetos dom em variáveis a serem manipuladas
 let superSadIcon = document.getElementById('f1')
 let sadIcon = document.getElementById('f2')
@@ -56,18 +59,21 @@ function removeConfigs() {
 }
 
 // adiciona logica dinamica de animacao do feedback dado pelo usuario apos processa-lo
-let feedback = window.location.search.replace('?id=', '')
+if (params) {
+	let feedbackPosition = params.indexOf('id=')
+	let feedback = params.charAt(feedbackPosition + 3) + params.charAt(feedbackPosition + 4)
 
-if (feedback == 'f1') {
-	superSad()
-} else if (feedback == 'f2') {
-	sad()
-} else if (feedback == 'f3') {
-	meh()
-} else if (feedback == 'f4') {
-	good()
-} else if (feedback == 'f5') {
-	superGood()
+	if (feedback == 'f1') {
+		superSad()
+	} else if (feedback == 'f2') {
+		sad()
+	} else if (feedback == 'f3') {
+		meh()
+	} else if (feedback == 'f4') {
+		good()
+	} else if (feedback == 'f5') {
+		superGood()
+	} 
 } else {
 	superSadIcon.addEventListener('mouseover', superSad)
 	sadIcon.addEventListener('mouseover', sad)

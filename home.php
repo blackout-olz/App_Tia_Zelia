@@ -1,5 +1,13 @@
 <?php require_once("validador_de_acesso.php"); ?>
 
+<?php
+
+	if (isset($_GET['id'])) {
+		$_SESSION['feedbackId'] = $_GET['id'];
+	}
+
+?>
+
 <html>
 	
 	<head>
@@ -68,10 +76,11 @@
 
 				<div class="mt-5">
 					<div class="d-flex flex-column align-items-center">
-				        <h3>Você irá almoçar hoje?</h3>
-				        <form action="confirma_almoco.php" method="post">
-				        	<div class="botao-dentro">
-					          <button class="btn btn-padrao text-light btn-lg">Sim</button>
+				        <h3>Quantas pessoas da sua sala irão almoçar?</h3>
+				        <form action="confirma_almoco.php" method="post" class="form-group d-flex flex-column">
+				        	<input type="text" class="form-control" name="qtd_pessoas">
+				        	<div class="botao-dentro mt-2">
+					          <button class="btn btn-padrao text-light btn-lg">Enviar</button>
 					        </div>
 				        </form>
 				        
