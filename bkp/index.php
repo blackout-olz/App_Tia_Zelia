@@ -19,38 +19,6 @@
 		<!-- Icon -->
 		<link rel="icon" href="imagens/icone.png">
 
-		<script>
-			
-			function validacao() {
-				let xmlRequest = new XMLHttpRequest()
-				let usuario = document.getElementById('usuario').value
-				let senha = document.getElementById('senha').value
-
-				xmlRequest.open('GET', `validacao.php?usuario=${usuario}&senha=${senha}`)
-
-				xmlRequest.onreadystatechange = () => {
-					if (xmlRequest.readyState == 4 && xmlRequest.status == 200) {
-						if (xmlRequest.responseURL.search('login=erro') != -1) {
-							if (document.getElementById('divErro')) {
-								document.getElementById('divErro').remove()
-							}
-							let div = document.createElement('div')
-							div.id = 'divErro'
-							div.className = 'text-danger ms-3'
-							div.textContent = 'Usuário e/ou senha inválidos'
-							document.getElementById('form').appendChild(div)
-							document.getElementById('usuario').focus()
-						} else {
-							window.location = xmlRequest.responseURL
-						}
-					}
-				}
-
-				xmlRequest.send()
-			}
-
-		</script>
-
 	</head>
 
 	<body>	
@@ -72,26 +40,27 @@
 					<div class="card">
 					  <div class="card-body px-5 py-5">
 					  	<h4 class="card-title mb-3 ms-2">Login</h4>
-					    <form class="form-group index-form" id="form">
+					    <form class="form-group index-form" action="validacao.php" method="post">
 					    	<div>
-					    		<input type="text" placeholder="Usuário" class="px-4 form-control" name="usuario" id="usuario">
+					    		<input type="text" placeholder="Usuário" class="px-4 form-control" name="usuario">
 					    	</div> 
 					    	<div class="mt-2">
-						    	<input type="password" placeholder="Senha" class="px-4 form-control" name="senha" id="senha"> 
+						    	<input type="password" placeholder="Senha" class="px-4 form-control" name="senha"> 
 						    </div>
 
 						    <?php
 						    	if (isset($_GET['login'])) {
-							    	if ($_GET['login'] == 'erro2') {
+							    	if($_GET['login'] == 'erro') {
+							    		echo '<div class="text-danger ms-3">Usuário e/ou senha inválidos</div>';
+							    	} else if ($_GET['login'] == 'erro2') {
 							    		echo '<div class="text-warning ms-5">Inicie sua sessão</div>';
 							    		echo '<div class="text-warning ms-3">para acessar outras páginas</div>';
 							    	}
 						    	}
 						    ?>
 
-						    
+						    <button class="btn btn-padrao text-light mt-3 form-control btn-lg" type="submit">Entrar</button>
 					    </form>
-					    <button class="btn btn-padrao text-light mt-3 form-control btn-lg" onclick="validacao()">Entrar</button>
 					  </div>
 					</div>
 				</div>

@@ -18,7 +18,7 @@
 
 
 	for ($i = 0; $i < count($usuarios); $i++) {
-		if ($_GET['usuario'] == $usuarios[$i]['usuario'] AND $_GET['senha'] == $usuarios[$i]['senha']) {
+		if ($_POST['usuario'] == $usuarios[$i]['usuario'] AND $_POST['senha'] == $usuarios[$i]['senha']) {
 			$usuario_autenticado = 'SIM';
 		}
 	}
