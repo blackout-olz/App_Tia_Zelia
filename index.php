@@ -50,7 +50,7 @@
 
 						    <?php
 						    	if (isset($_GET['login'])) {
-							    	if ($_GET['login'] == 'erro2') {
+							    	if ($_GET['login'] == 'erro') {
 							    		echo '<div class="text-warning ms-5 divErro">Inicie sua sessão</div>';
 							    		echo '<div class="text-warning ms-3 divErro">para acessar outras páginas</div>';
 							    	}
