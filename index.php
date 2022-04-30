@@ -19,38 +19,6 @@
 		<!-- Icon -->
 		<link rel="icon" href="imagens/icone.png">
 
-		<script>
-			
-			function validacao() {
-				let xmlRequest = new XMLHttpRequest()
-				let usuario = document.getElementById('usuario').value
-				let senha = document.getElementById('senha').value
-
-				xmlRequest.open('GET', `validacao.php?usuario=${usuario}&senha=${senha}`)
-
-				xmlRequest.onreadystatechange = () => {
-					if (xmlRequest.readyState == 4 && xmlRequest.status == 200) {
-						if (xmlRequest.responseURL.search('login=erro') != -1) {
-							if (document.getElementById('divErro')) {
-								document.getElementById('divErro').remove()
-							}
-							let div = document.createElement('div')
-							div.id = 'divErro'
-							div.className = 'text-danger ms-3'
-							div.textContent = 'Usuário e/ou senha inválidos'
-							document.getElementById('form').appendChild(div)
-							document.getElementById('usuario').focus()
-						} else {
-							window.location = xmlRequest.responseURL
-						}
-					}
-				}
-
-				xmlRequest.send()
-			}
-
-		</script>
-
 	</head>
 
 	<body>	
@@ -83,8 +51,8 @@
 						    <?php
 						    	if (isset($_GET['login'])) {
 							    	if ($_GET['login'] == 'erro2') {
-							    		echo '<div class="text-warning ms-5">Inicie sua sessão</div>';
-							    		echo '<div class="text-warning ms-3">para acessar outras páginas</div>';
+							    		echo '<div class="text-warning ms-5 divErro">Inicie sua sessão</div>';
+							    		echo '<div class="text-warning ms-3 divErro">para acessar outras páginas</div>';
 							    	}
 						    	}
 						    ?>
@@ -108,7 +76,7 @@
     	<script src="js/all.min.js"></script>
 
     	<!-- Javascript -->
-    	<script src="js/js.js"></script>
+    	<script src="js/validacao.js"></script>
 
 	</body>
 
