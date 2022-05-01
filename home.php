@@ -105,19 +105,19 @@
 			    	<div class="d-flex flex-column align-items-center pt-md-4 mt-5">
 				        <h3>Deixe seu feedback</h3>
 				        <div class="d-flex">
-				        	<div id="f1" class="px-1">
+				        	<div id="f1" class="px-1 feedback">
 				        	<i class="fa-regular fa-face-frown feedback-icon"></i>
 				        	</div>
-				        	<div id="f2" class="px-1">
+				        	<div id="f2" class="px-1 feedback">
 					        	<i class="fa-regular fa-face-frown-open feedback-icon"></i>
 					        </div>
-					        <div id="f3" class="px-1">
+					        <div id="f3" class="px-1 feedback">
 					          	<i class="fa-regular fa-face-meh feedback-icon"></i>
 					        </div>
-					        <div id="f4" class="px-1">
+					        <div id="f4" class="px-1 feedback">
 					          	<i class="fa-regular fa-face-smile feedback-icon"></i>
 					        </div>
-					        <div id="f5" class="px-1">
+					        <div id="f5" class="px-1 feedback">
 					          	<i class="fa-regular fa-face-grin-stars feedback-icon"></i>
 					        </div>
 				        </div>
@@ -129,11 +129,11 @@
 		<!-- Bootstrap Bundle with Popper Javascript -->
     	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    	<!-- Javascript -->
+    	<script src="js/feedbackConfig.js"></script>
+
     	<!-- Font Awesome Javascript -->
     	<script src="js/all.min.js"></script>
-
-    	<!-- Javascript -->
-    	<script src="js/js.js"></script>
 
 	</body>
 

@@ -1,9 +1,18 @@
 <?php
 
-	$id = str_replace('f', '', $_GET['id']);
+	require('consulta_feedback.php');
 
-	//tratamento com o feedback
+	if ($controller) {
+	
+		$arquivoW = fopen('arquivo.hd', 'a');
 
-	header('Location: home.php?id=' . $_GET['id']);
+		fwrite($arquivoW, $feedback);
+
+		fclose($arquivoW);
+
+		require('consulta_feedback.php');
+	}
 
 ?>
+
+{"feedback": "<?=$fb?>"}

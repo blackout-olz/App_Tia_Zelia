@@ -20,6 +20,7 @@
 	for ($i = 0; $i < count($usuarios); $i++) {
 		if ($_GET['usuario'] == $usuarios[$i]['usuario'] AND $_GET['senha'] == $usuarios[$i]['senha']) {
 			$usuario_autenticado = 'SIM';
+			$_SESSION['usuario'] = $usuarios[$i]['usuario'];
 		}
 	}
 
