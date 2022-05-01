@@ -3,9 +3,10 @@
 	require_once('validador_de_acesso.php');
 
 	$controller = true;
-	$fb = null;
+	$fb = 'null';
 
 	$data =  date('j:F');
+
 	$feedback = $data . '#' . $_SESSION['usuario'] . '#' . $_GET['id'] . '#' . PHP_EOL;
 
 	$arquivoR = fopen('arquivo.hd', 'r');
@@ -17,7 +18,10 @@
 			$controller = false;
 			$fb = $registro_array[2];
 		}
+	}
 
+	if ($_GET['id'] == 'null') {
+		$controller = false;
 	}
 
 ?>
